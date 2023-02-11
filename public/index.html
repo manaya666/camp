@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>camp</title>
+    <link rel="stylesheet" href="css/ress.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="inner">
+        <div class="menu">
+            <h1 class="title">camp</h1>
+            <div id="rn"></div>
+            <audio id="bgm1" preload loop>
+                <source src="./img/fire.mp3" type="audio/mp3">
+            </audio>
+            <button id="btn-play" type="button"><img src="./img/play.png"></button>
+        </div>
+    </header>
+    <main class="inner">
+        <div id="back">
+            <div id="video-area">
+                <video id="video" poster="img/movie.jpg" webkit-playsinline playsinline muted autoplay loop>
+                    <source src="./img/back.mp4" type="video/mp4">
+                    <source src="./img/back.ovg" type="video/ogv">
+                    <source src="./img/back.webm" type="video/webm">
+                    <p>動画を再生できる環境ではありません。</p>
+                </video>
+            </div>
+            <section class="left">
+                <div class="container">
+                    <form class="form">
+                        <div class="form__group">
+                            <label class="form__roomLabel" for="rooms">部屋：</label>
+                            <select class="form__control" id="form__rooms">
+                                <option value="room01">質問部屋</option>
+                                <option value="room02">教室</option>
+                                <option value="room03">取り調べ部屋</option>
+                                <option value="room04">雑談部屋</option>
+                            </select>
+                        </div>
+                        <div class="form__2">
+                            <label class="form__nameLabel" for="msgForm">名前：</label>
+                            <input type="text" class="form__control form__control2" id="form__msgForm"
+                                placeholder="とらお">
+                            <button type="submit" class="btn btn-primary" id="sendButton">入室</button>
+                        </div>
+                    </form>
+                    <div class="chat">
+                        <div class="chat__log" id="chatLogs"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="right">
+                <div class="tt">
+                    <div class="cg">
+                        <canvas class="tt__canvas" id="canvas"></canvas>
+                    </div>
+                    <div class="tt__button">
+                        <button type="button" onclick="clearCanvas()">リセット</button>
+                        <button type="button" onclick="prevCanvas()">戻る</button>
+                        <button type="button" onclick="nextCanvas()">進む</button>
+                        <button type="button" onclick="chgImg()" value="1">画像変換</button>
+                    </div>
+                    <!-- <div class="tt__change">
+                        <button type="button" onclick="chgImg()" value="1">画像変換</button>
+                    </div> -->
+                    <h2>画像出力</h2>
+                    <div id="img-box"><img id="newImg"></div>
+                </div>
+                <div class="img">
+                    <form class="img__form" action="" name="form">
+                        <label class="img__label" for="file">ファイルを選択</label>
+                        <input class="img__file" id="file" type="file">
+                        <span class="img__select">選択されていません</span>
+                    </form>
+                </div>
+                <img src="./img/firewood.gif" id="gif">
+            </section>
+    </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
